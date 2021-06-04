@@ -2,7 +2,7 @@
 
 Barcode scanner written in C to scann and check if the barcode is valid
 
-_#Files and folder tree:_
+___Files and folder tree:___
 
 .
 ├── build
