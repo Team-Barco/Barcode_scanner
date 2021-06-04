@@ -1,77 +1,82 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include "functions.h"
+#include "defines.h"
 
-bool checkC();
+int reverseCheckFlag = 0;
 
 int main(void){
-    char *buffer = NULL;
-    size_t bufsize = 512;
-
-    buffer = (char *)malloc(bufsize * sizeof(char));
-
-    if (buffer == NULL){
-        perror("Error allocating memory!!");
-        exit(EXIT_FAILURE);
-    }
-
-    char *numArr = NULL;
-
-    numArr = (char *)malloc(bufsize * sizeof(char));
-
-    if (numArr == NULL){
-        perror("Error allocating memory!!");
-        exit(EXIT_FAILURE);
-    }
 
     getNumOfTests();
-    getNumOfSensors();
-    printf("\n");
-    getSensorsData(buffer, numArr);
+    for (int i = 0; i < numOfTests; i++) {
+        getNumOfSensors();
+        char *buffer = NULL;
+        buffer = (char *)malloc((2 * numOfSensors) * sizeof(char));
+        if (buffer == NULL) {
+            perror("Error allocating memory for buffer!!\n");
+            exit(EXIT_FAILURE);
+        }
+        char *numArr = NULL;
+        numArr = (char *)malloc(numOfSensors * sizeof(char));
+        if (numArr == NULL) {
+            perror("Error allocating memory for numArr!!\n");
+            exit(EXIT_FAILURE);
+        }
 
-    //int binBuf = 512;
-    char *binArr = NULL;
-    binArr = (char *)malloc((counter) * sizeof(char));
+        getSensorsData(buffer, numArr);
 
-    if (binArr == NULL){
-        perror("Error allocating memory!!");
-        exit(EXIT_FAILURE);
+        char *binArr = NULL;
+        binArr = (char *)malloc((counter) * sizeof(char));
+        if (binArr == NULL) {
+            perror("Error allocating memory for binArr!!\n");
+            exit(EXIT_FAILURE);
+        }
+
+        sensorsBinaryParser(binArr, numArr);
+
+        printf("Counter before decodeBinary: %d\n", counter);
+
+        int tempBarcode[counter];
+
+        decodeBinary(binArr, tempBarcode);
+        printf("Counter after decodeBinary: %d\n", counter);
+        int finalBarcode[counter-1];
+        int sizeFinalBarcode = counter -1;
+
+        for (int k = 0; k < counter; k++) {
+            finalBarcode[k] = tempBarcode[k];
+            // printf("%d , %d ZZZ\n", tempBarcode[i], i);
+        }
+
+        printf("ReversecheckFlag: %d\n", reverseCheckFlag);
+
+        if (reverseCheckFlag == 1) {
+        decodedArrReverse(finalBarcode, sizeFinalBarcode);
+        }
+
+        for (int j = 0; j < counter; j++)
+        {
+            printf("%d FFF  ", finalBarcode[j]);
+        }
+        printf("\n");
+
+        if (counter < 3 ) {
+            if (finalBarcode[0] == -1 && reverseCheckFlag == 0) {
+                printf("Barcode truncated. Move scanner to right.\n");
+            } else if(finalBarcode[0] == -1 && reverseCheckFlag == 1) {
+                printf("Barcode truncated. Move scanner to left.\n");
+            } else {
+                printf("Invalid barcode!");
+            }
+        } else if (checkC(finalBarcode, sizeFinalBarcode) && checkK(finalBarcode, sizeFinalBarcode)) {
+            printf("Valid barcode.");
+            printf("\n");
+            printBarcode(finalBarcode, sizeFinalBarcode);
+            printf("Barcode C number check: %d \n", checkC(finalBarcode, sizeFinalBarcode));
+            printf("Barcode K number check: %d \n", checkK(finalBarcode, sizeFinalBarcode));
+        }
+
+        free(binArr);
+        free(numArr);
     }
-
-    sensorsBinaryParser(binArr, numArr);
-
-    printf("\n");
-    for (int i = 0; i < counter; i++) {
-        printf("%c", binArr[i]);
-    }
-    printf("\n");
-
-    decodeBinary(binArr);
-
-    printf("Print of the checkC func: %d\n", checkC());
-
-    free(buffer);
-    free(binArr);
-    free(numArr);
-
     return EXIT_SUCCESS;
-}
-
-bool checkC(void){
-    int deciArr[9] = {1,2,3,10,4,5,5,2};
-    for (unsigned int k = 0; k < (sizeof(deciArr) / sizeof(deciArr[0])); k++){
-        printf("%d\n", deciArr[k]);
-        /* code */
-    }
-
-    int sum = 0;
-    int lastElemArr = (sizeof(deciArr) / sizeof(deciArr[0]));
-    printf("total elements: %d\n", lastElemArr);
-    int n = deciArr[lastElemArr - 2];
-    printf("%d\n", deciArr[8]);
-
-    for(int i = 1;i <= n + 1; i++){
-        sum += (((n - i + 1)%9)+1)* deciArr[i - 1];
-    }
-    return sum % 11 == deciArr[lastElemArr - 1] ? true : false;
 }

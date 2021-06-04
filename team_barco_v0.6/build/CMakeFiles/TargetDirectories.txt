@@ -1,3 +1,0 @@
-/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/team_barco_v0.6/build/CMakeFiles/rebuild_cache.dir
-/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/team_barco_v0.6/build/CMakeFiles/BarcodeScanner-0.6.0.dir
-/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/team_barco_v0.6/build/CMakeFiles/edit_cache.dir

@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include "functions.h"
 
-int numOfTests, numOfSensors, counter = 0;
-size_t characters;
+int numOfTests = 0;
+int numOfSensors = 0;
+int counter = 0;
 
 void getNumOfTests() {
     printf("Enter the number of tests: ");
@@ -17,10 +18,10 @@ void getNumOfSensors() {
 
 void getSensorsData(char *buffer, char *numArr) {
     /* get sensor data from terminal */
-    size_t bufsize = 150;
+    size_t bufsize = 2 * numOfSensors;
 
-    printf("Enter barcode values: ");
-    characters = getline(&buffer, &bufsize, stdin);
+    printf("Enter sensors data: ");
+    getline(&buffer, &bufsize, stdin);
 
     const char s[2] = " ";
     char *token;
@@ -31,7 +32,7 @@ void getSensorsData(char *buffer, char *numArr) {
     int i = 0;
 
     /* walk through other tokens */
-    for (unsigned j = 0; j < strlen(buffer); j++) {
+    for (unsigned int j = 0; j < strlen(buffer); j++) {
         while( token != NULL ) {
             n = atof(token);
             if (n > 0.50F) {
@@ -45,11 +46,7 @@ void getSensorsData(char *buffer, char *numArr) {
             token = strtok(NULL, s);
         }
     }
-    //int count = i;
+    numArr[i] = '\0';
     counter = i;
-
-    // for (int j = 0; j < count; j++) {
-    //     printf("%c ", numArr[j]);
-    // }
-    // printf("\n");
+    free(buffer);
 }
