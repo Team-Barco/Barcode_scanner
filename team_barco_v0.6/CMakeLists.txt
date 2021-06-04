@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5.1)
 
 ## defines project's name and version
-project(BarcodeScanner VERSION 0.2.0)
+project(BarcodeScanner VERSION 0.6.0)
 
 ## set the C standard to 11
 set(CMAKE_C_STANDARD 11)
@@ -10,7 +10,7 @@ set(CMAKE_C_STANDARD 11)
 set(BLD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/build)
 
 ## set var for the include directory
-set(INCL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+set(INCL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 ## set var for the source directory
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -45,6 +45,9 @@ add_executable(
     ${SRC_DIR}/main.c
     ${SRC_DIR}/decoder.c
     ${SRC_DIR}/getSensorsData.c
+    ${SRC_DIR}/reverser.c
+    ${SRC_DIR}/strrev.c
+    ${SRC_DIR}/checkDigit.c
 )
 
 ## include the include folder with the header files

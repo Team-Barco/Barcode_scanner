@@ -1,0 +1,106 @@
+Dr. Memory version 2.3.18665 build 0 built on Feb 13 2021 02:28:34
+Dr. Memory results for pid 17847: "test"
+Recorded 17 suppression(s) from default /opt/DrMemory/bin64/suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register al
+# 0 replace_strlen                  [/home/runner/work/drmemory/drmemory/drmemory/replace.c:406]
+# 1 sensorsDataParser               [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:112]
+# 2 main                            [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:48]
+Note: @0:00:04.833 in thread 17847
+Note: instruction: test   %al %al
+
+Error #2: UNINITIALIZED READ: reading register al
+# 0 replace_strlen                  [/home/runner/work/drmemory/drmemory/drmemory/replace.c:406]
+# 1 sensorsDataParser               [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:112]
+# 2 main                            [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:48]
+Note: @0:00:04.982 in thread 17847
+Note: instruction: test   %al %al
+
+Error #3: UNINITIALIZED READ: reading register al
+# 0 replace_strlen                  [/home/runner/work/drmemory/drmemory/drmemory/replace.c:406]
+# 1 sensorsDataParser               [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:112]
+# 2 main                            [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:48]
+Note: @0:00:05.029 in thread 17847
+Note: instruction: test   %al %al
+
+Error #4: UNINITIALIZED READ: reading register rdx
+# 0 libc.so.6!____strtod_l_internal     [/build/glibc-S9d2JN/glibc-2.27/stdlib/strtod_l.c:610]
+# 1 sensorsDataParser                   [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:134]
+# 2 main                                [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:48]
+Note: @0:00:05.093 in thread 17847
+Note: instruction: test   0x01(%rsi,%rdx,2) $0x20
+
+Error #5: REACHABLE LEAK 1425 direct bytes 0x00007f5ce39d51a0-0x00007f5ce39d5731 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #6: REACHABLE LEAK 1169 direct bytes 0x00007f5ce39d5760-0x00007f5ce39d5bf1 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #7: REACHABLE LEAK 16 direct bytes 0x00007f5ce39d5c20-0x00007f5ce39d5c30 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #8: REACHABLE LEAK 158 direct bytes 0x00007f5ce39d5c50-0x00007f5ce39d5cee + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #9: REACHABLE LEAK 40 direct bytes 0x00007f5ce39d5d10-0x00007f5ce39d5d38 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #10: REACHABLE LEAK 320 direct bytes 0x00007f5ce39d5d60-0x00007f5ce39d5ea0 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #11: REACHABLE LEAK 32 direct bytes 0x00007f5ce39d5ec0-0x00007f5ce39d5ee0 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #12: REACHABLE LEAK 1178 direct bytes 0x00007f5ce39d5f00-0x00007f5ce39d639a + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #13: REACHABLE LEAK 32 direct bytes 0x00007f5ce39d63c0-0x00007f5ce39d63e0 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #14: REACHABLE LEAK 40 direct bytes 0x00007f5ce39d6400-0x00007f5ce39d6428 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #15: REACHABLE LEAK 56 direct bytes 0x00007f5ce39d6450-0x00007f5ce39d6488 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #16: REACHABLE LEAK 120 direct bytes 0x00007f5ce39d64b0-0x00007f5ce39d6528 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #17: REACHABLE LEAK 1040 direct bytes 0x00007f5ce39d6990-0x00007f5ce39d6da0 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #18: LEAK 512 direct bytes 0x00007f5ce39d7fa0-0x00007f5ce39d81a0 + 0 indirect bytes
+# 0 replace_malloc               [/home/runner/work/drmemory/drmemory/common/alloc_replace.c:2580]
+# 1 main                         [/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c:38]
+
+Error #19: REACHABLE LEAK 1024 direct bytes 0x00007f5ce39d81c0-0x00007f5ce39d85c0 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #20: REACHABLE LEAK 1024 direct bytes 0x00007f5ce39d85e0-0x00007f5ce39d89e0 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #21: REACHABLE LEAK 1056 direct bytes 0x00007f5ce39d8a00-0x00007f5ce39d8e20 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:    169
+	Error #   2:     66
+	Error #   3:    115
+	Error #   4:     36
+	Error #  16:      4
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      4 unique,   386 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      1 unique,     1 total,    512 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+     16 unique,    19 total,   9714 byte(s) of still-reachable allocation(s)
+NO ERRORS IGNORED
+Details: /opt/DrMemory/drmemory/logs/DrMemory-test.17847.000/results.txt

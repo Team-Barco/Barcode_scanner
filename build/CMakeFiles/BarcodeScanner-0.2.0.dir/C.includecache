@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../includes/defines.h
+stdlib.h
+-
+
+../includes/functions.h
+string.h
+-
+stdlib.h
+-
+defines.h
+../includes/defines.h
+
+/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/decoder.c
+stdio.h
+-
+stdbool.h
+-
+defines.h
+/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/defines.h
+functions.h
+/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/functions.h
+
+/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/getSensorsData.c
+stdio.h
+-
+functions.h
+/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/functions.h
+
+/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/main.c
+stdio.h
+-
+stdbool.h
+-
+functions.h
+/home/clappingmonkey/develop/learn/Code-Academy_Projects/Project-C_4/Barcode_scanner/src/functions.h
+

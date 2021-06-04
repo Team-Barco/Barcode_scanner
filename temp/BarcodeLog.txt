@@ -1,0 +1,80 @@
+File opened at: Thu May 27 18:10:41 2021
+
+scanSequence: Success.
+reverseCheck: Barcode too short.
+
+File closed at: Thu May 27 18:11:16 2021
+
+
+File opened at: Thu May 27 18:11:23 2021
+
+scanSequence: Success.
+reverseCheck: Barcode too short.
+
+File closed at: Thu May 27 18:11:25 2021
+
+
+File opened at: Thu May 27 18:11:31 2021
+
+scanSequence: Success.
+reverseCheck: Barcode too short.
+
+File closed at: Thu May 27 18:11:33 2021
+
+
+File opened at: Thu May 27 18:11:36 2021
+
+scanSequence: Success.
+reverse: Success.
+reverseCheck: Success.
+cutEdges: Success.
+readSequence: Success.
+validateCode: Success.
+checkCode: Unknown symbol in barcode
+
+File closed at: Thu May 27 18:11:41 2021
+
+
+File opened at: Fri May 28 01:53:32 2021
+
+scanSequence: Success.
+reverseCheck: Barcode too short.
+
+File closed at: Fri May 28 01:53:35 2021
+
+
+File opened at: Fri May 28 01:53:38 2021
+
+scanSequence: Success.
+reverseCheck: Success.
+cutEdges: Success.
+readSequence: Success.
+validateCode: Success.
+checkCode: Success.
+
+File closed at: Fri May 28 01:53:42 2021
+
+
+File opened at: Fri May 28 01:53:53 2021
+
+scanSequence: Success.
+reverse: Success.
+reverseCheck: Success.
+cutEdges: Success.
+readSequence: Success.
+validateCode: Success.
+checkCode: Unknown symbol in barcode
+
+File closed at: Fri May 28 01:54:12 2021
+
+
+File opened at: Fri May 28 01:56:08 2021
+
+scanSequence: Success.
+reverse: Success.
+reverseCheck: Success.
+cutEdges: Barcode no edge sequence.
+
+File closed at: Fri May 28 01:56:13 2021
+
+
